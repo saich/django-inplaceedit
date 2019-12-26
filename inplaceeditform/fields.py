@@ -23,7 +23,7 @@ import django
 from copy import deepcopy
 
 from django.conf import settings
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.contrib.admin.widgets import AdminDateWidget, AdminSplitDateTime, AdminTimeWidget
 from django.forms.models import modelform_factory
 from django.template.loader import render_to_string
@@ -34,11 +34,8 @@ from inplaceeditform.commons import apply_filters, import_module, has_transmeta,
 from inplaceeditform.perms import SuperUserPermEditInline
 
 
-if sys.version_info[0] == 2:
-    string = basestring
-else:
-    string = str
-    unicode = str
+string = str
+unicode = str
 
 
 class BaseAdaptorField(object):
